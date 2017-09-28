@@ -14,19 +14,16 @@ angular.module('myApp.view1', ['ngRoute'])
   var url = "http://lobus.nlared.com/service.php";
   var data = '';
 
+
   $http({
-    method: 'JSONP',
+    method: 'GET',
     url: url
   }).then(function(response){
     data = response.data;
-    console.log('hello');
+    console.log(data);
   },function(response){
     data = response;
-    console.log(response);
   });
-
-  console.log(data);
-  console.log('hello');
 
   $scope.testString = data;
 }]);
